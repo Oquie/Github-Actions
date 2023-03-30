@@ -6,6 +6,7 @@ terraform {
   }
 }
 
+
 /*provider "aws" {
     region = "us-east-1"
   }
@@ -20,5 +21,10 @@ terraform {
 provider "aws" {
   shared_credentials_file = "$HOME/.aws/credentials"
   #profile                 = "default"
+  provider "aws" {
+  shared_credentials_file = "$HOME/.aws/credentials"
+  profile                 = "default"
   region                  = "us-east-1"
-}
+ }
+} 
+
