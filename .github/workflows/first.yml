@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: Checkout
-        uses: actions/checout@v1     #(we can set up a terraform environment by adding terraform pluggins)
+        uses: actions/checkout@v1     #(we can set up a terraform environment by adding terraform pluggins)
       - name: set terraform
         uses: hashicorp/setup-terraform@v2
         with:
