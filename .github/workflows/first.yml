@@ -1,0 +1,24 @@
+name: shell commands
+
+on:         #(events)
+  - push
+env: 
+  ACCESS_KEY_ID: ${{secret.ACCESS_KEY}}
+  AWS_SECRET_ACCESS_KEY: ${{secret.AWS_SECRET_ACCESS_KEY}}  
+jobs:
+  run-shell-commands:    
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Checkout
+        uses: actions/checout@v1     #(we can set up a terraform environment by adding terraform pluggins)
+      - name: set terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+           terraform_version: 1.1.9
+      - name: Terraform init
+        run: terraform init  
+      - name: Terraform validate
+        run: terraform validate
+      - name: Terraform plan
+        run: terraform plan
+      
